@@ -1,0 +1,44 @@
+version: "3.7"
+
+services:
+  travel-fe-dev:
+    build:
+      context: ./
+      args:
+        - NEXT_PUBLIC_URL=https://cms.dev.mylocal.vn
+    container_name: travel-fe-dev
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"   # number of files or file count
+        max-size: "10m" # file size
+    ports:
+      - 3001:3000
+
+  travel-fe-staging:
+      build:
+        context: ./
+        args:
+          - NEXT_PUBLIC_URL=https://cms.stagapimylocal01.mylocal.vn
+      container_name: travel-fe-staging
+      logging:
+        driver: "json-file"
+        options:
+          max-file: "5"   # number of files or file count
+          max-size: "10m" # file size
+      ports:
+        - 3002:3000
+
+  travel-fe-prod:
+        build:
+          context: ./
+          args:
+            - NEXT_PUBLIC_URL=https://cms.mylocal.vn
+        container_name: travel-fe-prod
+        logging:
+          driver: "json-file"
+          options:
+            max-file: "5"   # number of files or file count
+            max-size: "10m" # file size
+        ports:
+          - 3000:3000

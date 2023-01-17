@@ -1,0 +1,4 @@
+dev ansible_host=203.205.6.37 ansible_user=root
+
+[server_hosts]
+dev

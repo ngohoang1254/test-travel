@@ -1,0 +1,14 @@
+---
+service_name: qr-dulich-staging
+deploy_project_dir: /var/www/{{ service_name }}
+
+deploy_build_dir: /var/www/dulich-staging.mylocal.vn
+
+docker_service_name: qr-dulich-staging
+
+project_temp_root_dir: "/tmp/{{ service_name }}"
+env: staging
+
+# source code
+git_repo: git@git.asimtelecom.vn:development/travel-digital-transformation-fe.git
+git_branch: staging

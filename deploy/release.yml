@@ -1,0 +1,10 @@
+---
+- name: preapre
+  hosts: server_hosts
+  roles:
+    - clone
+
+- name: deploy
+  hosts: server_hosts
+  roles:
+    - deploy
